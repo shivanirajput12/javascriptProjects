@@ -74,3 +74,26 @@ This folder contains 10 simple JavaScript projects. Each project helps you learn
 
 ---
 
+## 5. Accordion FAQ
+
+**What is it?**
+- An FAQ section where you can click on questions to show or hide the answers. Only one answer opens at a time, but you can also expand or collapse all with buttons.
+
+**Main things used:**
+- Event listeners for mouse clicks and keyboard keys (Enter/Space) for accessibility.
+- Adding and removing CSS classes to show or hide answers.
+- Functions to open all or close all items at once.
+- Simple logic to make sure only one answer is open at a time (for better user experience).
+
+**Why these are used:**
+- Event listeners let you react to user actions (clicks and key presses).
+- Toggling classes is an easy way to show/hide content using CSS.
+- Keyboard support makes the FAQ usable for everyone, not just mouse users.
+- The open/close all buttons help users quickly see or hide all answers.
+
+**How it works:**
+- Click a question or press Enter/Space to open its answer.
+- Only one answer is open at a time, unless you use the expand/collapse all buttons.
+
+---
+
