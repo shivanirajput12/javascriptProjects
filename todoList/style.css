@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(213, 241, 243);
+}
+.input-container {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+#todoInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+}
+button{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #5b9dd9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+li.completed span{
+    text-decoration: line-through;
+    color: #888;
+}
+li span{
+    flex: 1;
+    cursor: pointer;
+}
+
+li button{
+   background: #e74c3c;
+   padding: 8px 12px;
+   margin-left:10px;
+}
+.complete-btn{
+    background: #27ae60 !important;
+}
+
+.edit-btn {
+  background: #f39c12;
+}
