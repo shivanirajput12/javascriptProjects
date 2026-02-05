@@ -1,60 +1,70 @@
-
-//select all elements that we need
+// select elements
 const textInput = document.querySelector("#textInput");
 const currentCount = document.querySelector("#current");
 const counter = document.querySelector("#counter");
+const wordCountEl = document.querySelector("#words");
+const clearBtn = document.querySelector("#clearBtn");
 
-
-
-//set the maximum character limit
+// set max limit
 const maxChars = 280;
 
+// input event
+textInput.addEventListener("input", function () {
+  let value = textInput.value;
 
-//listen for input event on text area(fires when user types or pastes text)
+  // ✅ Prevent typing beyond limit
+  if (value.length > maxChars) {
+    value = value.slice(0, maxChars);
+    textInput.value = value;
+  }
 
-textInput.addEventListener("input", function (event) {
-  // get current length of text
-  const currentLength = textInput.value.length;
-
-  //update the current count display
+  const currentLength = value.length;
   currentCount.textContent = currentLength;
 
-  //calculate remaining characters
+  // ✅ Word count logic
+  const words = value
+    .trim()
+    .split(/\s+/)
+    .filter(word => word.length > 0);
+
+  wordCountEl.textContent = value.trim() === "" ? 0 : words.length;
+
   const remainingChars = maxChars - currentLength;
 
-  //remove all status classes first
+  // reset classes
   counter.classList.remove("warning", "danger");
   textInput.classList.remove("over-limit");
 
-  //apply appropriate styling based on remaaining characters
-  if (remainingChars < 0) {
-    //over the limit
-    counter.classList.add("danger");
-    textInput.classList.add("over-limit");
-  } else if (remainingChars <= 20) {
-    //getting close to the limit
+  // styling zones
+  if (remainingChars <= 20) {
     counter.classList.add("danger");
   } else if (remainingChars <= 50) {
-    //warning zone
     counter.classList.add("warning");
   }
 });
 
+// ✅ Clear Button
+clearBtn.addEventListener("click", () => {
+  textInput.value = "";
+  currentCount.textContent = 0;
+  wordCountEl.textContent = 0;
 
-//compare these events
-textInput.addEventListener('input', ()=>{
-  console.log("fires on every change");
-  
+  counter.classList.remove("warning", "danger");
+  textInput.classList.remove("over-limit");
+
+  textInput.focus();
 });
 
-textInput.addEventListener('change', ()=>{
-  console.log("fires only when you click outside the text area after making changes");
+
+// Event comparison (for learning)
+textInput.addEventListener("change", () => {
+  console.log("change fired");
 });
 
-textInput.addEventListener('keyup', ()=>{
-  console.log("fires when you release a key");
+textInput.addEventListener("keyup", () => {
+  console.log("keyup fired");
 });
 
-textInput.addEventListener('keydown', ()=>{
-  console.log("fires when you press down a key");
+textInput.addEventListener("keydown", () => {
+  console.log("keydown fired");
 });

@@ -8,8 +8,18 @@
   </head>
   <body>
     <h1>Tweet Counter</h1>
+
     <textarea id="textInput" placeholder="What's happening?"></textarea>
-    <p id="counter"><span id="current">0</span>/ <span id="max">280</span></p>
+
+    <div class="info">
+      <p id="counter">
+        <span id="current">0</span> / <span id="max">280</span> characters
+      </p>
+      <p id="wordCounter">Words: <span id="words">0</span></p>
+    </div>
+
+    <button id="clearBtn">Clear</button>
+
     <script src="script.js"></script>
   </body>
 </html>

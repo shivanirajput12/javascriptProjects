@@ -1,43 +1,62 @@
-body{
-    font-family: sans-serif;
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgb(213, 241, 243);
+body {
+  font-family: sans-serif;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(213, 241, 243);
 }
 
-textarea{
-    width: 100%;
-    height: 150px;
-    font-size: 16px;
-    padding: 10px;
-    resize: none;
-    border: 2px solid #ddd;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-textarea:focus{
-    border-color: #5b9dd9;
-    outline: none;
+textarea {
+  width: 100%;
+  height: 150px;
+  font-size: 16px;
+  padding: 10px;
+  resize: none;
+  border: 2px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 
-#counter{
-    text-align: right;
-    font-size: 14px;
-    margin-top: 10px;
-}
-.warning{
-    color: orangered;
-}
-.danger{
-    color: red;
-    font-weight: bold;
-}
-.over-limit{
-    color: red;
+textarea:focus {
+  border-color: #5b9dd9;
+  outline: none;
 }
 
-textarea.over-limit{
-    border-color: red;
-    background-color: #ffe6e6;
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+#counter {
+  text-align: right;
+}
+
+.warning {
+  color: orangered;
+}
+
+.danger {
+  color: red;
+  font-weight: bold;
+}
+
+textarea.over-limit {
+  border-color: red;
+  background-color: #ffe6e6;
+}
+
+button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #555;
 }
