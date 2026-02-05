@@ -97,3 +97,28 @@ This folder contains 10 simple JavaScript projects. Each project helps you learn
 
 ---
 
+## 6. Modal Popup
+
+**What is it?**
+- A system to show popup modals for messages, information, or loading screens. You can open different modals, close them, and see a loading animation.
+
+**Main things used:**
+- Event listeners for button clicks and keyboard (Escape key) to open/close modals.
+- Functions to show a specific modal or hide all modals.
+- Overlay to darken the background and focus on the popup.
+- Simulated loading with setTimeout and a spinner animation.
+- Accessibility: close modals with Escape key or by clicking outside the modal.
+
+**Why these are used:**
+- Event listeners make the modals interactive and easy to control.
+- Overlay and modal logic help focus user attention and improve user experience.
+- Loading simulation shows how to handle waiting for data or actions.
+- Accessibility features make the popup system usable for everyone.
+
+**How it works:**
+- Click a button to open a modal popup.
+- You can close the modal by clicking the close button, clicking outside, or pressing Escape.
+- The loading modal shows a spinner for a few seconds, then closes automatically.
+
+---
+
