@@ -188,4 +188,36 @@ This folder contains 10 simple JavaScript projects. Each project helps you learn
 - On successful submit, the form clears and data is removed from storage.
 
 ---
+## 9. Quiz App
+**What is it?**
 
+- An interactive quiz where you answer questions, see your score, and try to beat your high score. You can filter by difficulty and category.
+Main things used:
+
+-Event listeners for button clicks and option selection.
+-Filtering questions based on difficulty and category.
+-Timer for each question (counts down from 30 seconds).
+-Dynamic loading of questions and options.
+-High score saving with localStorage.
+-Visual feedback for correct/incorrect answers.
+
+**Why these are used:**
+
+Filtering lets you choose the type of questions you want.
+Timers add challenge and excitement.
+Dynamic loading makes the quiz flexible and easy to update.
+High score tracking motivates you to improve.
+Visual feedback helps you learn from mistakes.
+Keywords explained:
+
+Event listener: Runs code when you click buttons or select answers.
+localStorage: Stores your high score in the browser.
+filter: Used to select questions based on your choices.
+setInterval: Runs code every second for the timer.
+innerHTML: Updates the page with new questions and results.
+How it works:
+
+Choose difficulty and category, then start the quiz.
+Answer each question before the timer runs out.
+See your score and high score at the end.
+Restart the quiz to try again
