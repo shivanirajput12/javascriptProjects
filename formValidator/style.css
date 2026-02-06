@@ -3,6 +3,7 @@ body {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
+  background-color: #ddd;
 }
 
 .form-group {
@@ -67,3 +68,15 @@ button:disabled {
   background: #bdc3c7;
   cursor: not-allowed;
 }
+
+#strengthMeter{
+  height: 8px;
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+#strengthMeter.weak{ background:red; }
+#strengthMeter.medium{ background:orange; }
+#strengthMeter.strong{ background:green; }

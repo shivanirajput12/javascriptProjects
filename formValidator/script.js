@@ -4,7 +4,36 @@ const username = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
+const showPassword = document.querySelector("#showPassword");
+const strengthMeter = document.querySelector("#strengthMeter");
 
+
+//load saved data (persistence)
+window.addEventListener("DOMContentLoaded",()=>{
+    username.value = localStorage.getItem("username") || "";
+    email.value = localStorage.getItem("email") || "";  
+    email.value = localStorage.getItem("email") || "";
+    password.value = localStorage.getItem("password") || "";
+    confirmPassword.value = localStorage.getItem("confirmPassword") || "";
+})
+
+
+//save data while typing (persistence)
+username.addEventListener("input",()=>{
+    localStorage.setItem("username", username.value);
+});
+
+email.addEventListener("input",()=>{
+    localStorage.setItem("email", email.value);
+});
+
+password.addEventListener("input",()=>{
+    localStorage.setItem("password", password.value);
+});
+
+confirmPassword.addEventListener("input",()=>{
+    localStorage.setItem("confirmPassword", confirmPassword.value);
+}); 
 
 //validation functions
 function showError(input, message){
@@ -87,18 +116,67 @@ email.addEventListener('input', validateEmail);
 password.addEventListener('input', validatePassword);
 confirmPassword.addEventListener('input', validateConfirmPassword);
 
-//form submit event
-form.addEventListener('submit', function(event){
-    event.preventDefault(); //prevent form submission
 
-    const isUsernameValid = validateUsername();
-    const isEmailValid = validateEmail();
-    const isPasswordValid = validatePassword();
-    const isConfirmPasswordValid = validateConfirmPassword();
 
-    if(isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid){
-        alert('Form submitted successfully!');
-        form.reset(); //reset form after successful submission
-      
-    }
+//logic for strength meter
+
+password.addEventListener("input", checkStrength);
+
+function checkStrength(){
+  const value = password.value;
+  let strength = 0;
+
+  if(value.length >= 6) strength++;
+  if(/[A-Z]/.test(value)) strength++;
+  if(/[0-9]/.test(value)) strength++;
+  if(/[^A-Za-z0-9]/.test(value)) strength++;
+
+  strengthMeter.className = "";
+
+  if(strength <= 1){
+    strengthMeter.classList.add("weak");
+  }else if(strength <= 3){
+    strengthMeter.classList.add("medium");
+  }else{
+    strengthMeter.classList.add("strong");
+  }
+}
+
+//logic for show password toggle
+
+showPassword.addEventListener("change", () => {
+  password.type = showPassword.checked ? "text" : "password";
+  confirmPassword.type = showPassword.checked ? "text" : "password";
+});
+
+//form submit
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const isUsernameValid = validateUsername();
+  const isEmailValid = validateEmail();
+  const isPasswordValid = validatePassword();
+  const isConfirmPasswordValid = validateConfirmPassword();
+
+  if (
+    isUsernameValid &&
+    isEmailValid &&
+    isPasswordValid &&
+    isConfirmPasswordValid
+  ) {
+    alert("Form submitted successfully!");
+    form.reset();
+
+    //clear saved data on successful submission
+    // localStorage.removeItem("username");
+    // localStorage.removeItem("email");
+    // localStorage.removeItem("password");
+    // localStorage.removeItem("confirmPassword");
+
+    //or we can use clear() to clear all localStorage
+    localStorage.clear();
+
+    //reset strength meter
+    strengthMeter.className = "";
+  }
 }); 
