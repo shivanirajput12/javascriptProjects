@@ -154,3 +154,38 @@ This folder contains 10 simple JavaScript projects. Each project helps you learn
 
 ---
 
+## 8. Form Validator
+
+**What is it?**
+- A signup form that checks your input for username, email, and password. It gives instant feedback, shows password strength, and saves your input while you type.
+
+**Main things used:**
+- Event listeners for input and form submission.
+- Validation functions to check if the input is correct (like email format, password match, etc).
+- `localStorage` to save form data as you type, so you don't lose it if you refresh.
+- Password strength meter to show how strong your password is.
+- Show/hide password feature with a checkbox.
+- Real-time error messages and success highlights.
+
+**Why these are used:**
+- Validation helps users fill out the form correctly and prevents mistakes.
+- Saving data in `localStorage` improves user experience by keeping their progress.
+- Real-time feedback makes the form easy and friendly to use.
+- Password strength and show/hide features help users create better passwords.
+
+**Keywords explained:**
+- `Event listener`: Runs code when you type, click, or submit.
+- `localStorage`: Stores data in the browser so it stays after refresh.
+- `Validation`: Checking if the input is correct (like a valid email or matching passwords).
+- `addEventListener`: Method to listen for events (like input or submit).
+- `classList`: Used to add or remove CSS classes for styling errors or success.
+
+**How it works:**
+- Type in the form and see errors or success instantly.
+- Password strength bar updates as you type.
+- Your input is saved automatically and restored if you reload.
+- Click the checkbox to show or hide your password.
+- On successful submit, the form clears and data is removed from storage.
+
+---
+
