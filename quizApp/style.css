@@ -5,7 +5,24 @@ body {
   padding: 20px;
   background-color: #eee;
 }
-
+#difficulty{
+    padding: 15px 30px;
+    background: #d14d25;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+#category{
+        padding: 15px 30px;
+    background: #54812f;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
 .startBtn{
     padding: 15px 30px;
     background: #3498db;
